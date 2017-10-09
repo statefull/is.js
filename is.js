@@ -6,7 +6,7 @@
       // Also create a global in case some scripts
       // that are loaded still are looking for
       // a global even when an AMD loader is in use.
-      return (root.is = factory.bind(this));
+      return (root.loadCheckers = factory.bind(this));
     });
   } else if (typeof exports === 'object') {
     // Node. Does not work with strict CommonJS, but
@@ -15,7 +15,7 @@
     module.exports = factory.bind(this);
   } else {
     // Browser globals (root is self)
-    root.selection = factory.bind(this);
+    root.loadCheckers = factory.bind(this);
   }
 }(this, _selection));
 
