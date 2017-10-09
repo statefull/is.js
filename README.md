@@ -9,7 +9,7 @@ is.js
 
 #### Usage:
 
-Import is.js to your proyect. You will have a function called: *selection* where you can pass any of this subset of checkers:
+Import **is.js** to your proyect. You will have a function called: **loadCheckers** where you can pass any of this subset of checkers:
 
 **types**: This checkers will be always loaded.
 
@@ -32,7 +32,7 @@ Import is.js to your proyect. You will have a function called: *selection* where
 To load any of this checker just do:
 
 ```javascript
-var is = selection('types', 'presence',...);
+var is = loadCheckers('types', 'presence',...);
 ```
 You will have in **is** all functions available for loaded checkers.
 
