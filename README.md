@@ -9,31 +9,32 @@ is.js
 
 #### Usage:
 
-Node.js:
-```
-npm install is_js
-```
+Import is.js to your proyect. You will have a function called: *selection* where you can pass any of this subset of checkers:
 
-Bower:
-```
-bower install is_js
-```
+**types**: This checkers will be always loaded.
 
-Build:
-```
-npm run build
-```
+**presence**: Load checkers for checking presence.
 
-Test:
-```
-npm test
-```
+**arithmetic**: Load arithmetical checkers.
 
-#### Contributing:
-Thanks for considering to contribute. Check [here](CONTRIBUTING.md)
+**regexpr**: Load built-in checker for common checks.
 
-#### Contributors:
-Many thanks to our contributors: https://github.com/arasatasaygin/is.js/graphs/contributors
+**strings**: Load string checkers.
+
+**time**: Load date/time checkers.
+
+**environment**: Load checkers for checking browser, OS...
+
+**object**: Load Object checkers.
+
+**array**: Load array checkers.
+
+To load any of this checker just do:
+
+```javascript
+var is = selection('types', 'presence',...);
+```
+You will have in **is** all functions available for loaded checkers.
 
 Type checks
 ===========
