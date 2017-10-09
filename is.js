@@ -1,5 +1,5 @@
 
-;(function (root, factory) {    // eslint-disable-line no-extra-semi
+; (function (root, factory) {    // eslint-disable-line no-extra-semi
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(function () {
@@ -8,11 +8,13 @@
       // a global even when an AMD loader is in use.
       return (root.loadCheckers = factory.bind(this));
     });
-  } else if (typeof exports === 'object') {
+  } else if (typeof module.exports === 'object') {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like enviroments that support module.exports,
     // like Node.
-    module.exports = factory.bind(this);
+    module.exports = {
+      loadCheckers: factory.bind(this)
+    };
   } else {
     // Browser globals (root is self)
     root.loadCheckers = factory.bind(this);
