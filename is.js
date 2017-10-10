@@ -28,15 +28,15 @@ function _selection() {
 
   let loader = {};
 
-  loader.types = _types.bind(this);
-  loader.presence = _presence.bind(this);
-  loader.arithmetic = _arithmetic.bind(this);
-  loader.regexpr = _regexpr.bind(this);
-  loader.strings = _strings.bind(this);
-  loader.time = _time.bind(this);
+  loader.types       = _types.bind(this);
+  loader.presence    = _presence.bind(this);
+  loader.arithmetic  = _arithmetic.bind(this);
+  loader.regexpr     = _regexpr.bind(this);
+  loader.strings     = _strings.bind(this);
+  loader.time        = _time.bind(this);
   loader.environment = _environment.bind(this);
-  loader.object = _object.bind(this);
-  loader.array = _array.bind(this);
+  loader.object      = _object.bind(this);
+  loader.array       = _array.bind(this);
 
   if (!arguments.hasOwnProperty('types')) {
     let aux = {};
@@ -45,6 +45,9 @@ function _selection() {
   }
 
   for (let i = 0; i < Object.keys(params).length; i++) {
+
+    if (!loader.hasOwnProperty(params[i])) { continue; }
+
     let aux = loader[params[i]].call(this, is);
 
     let keys = Object.keys(aux);
